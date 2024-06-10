@@ -1,0 +1,47 @@
+[
+  {
+      "id": "push-up",
+      "isCustom": false,
+      "name": "Push-up"
+  },
+  {
+      "id": "bench-press",
+      "isCustom": false,
+      "name": "Bench Press"
+  },
+  {
+      "id": "overhead-standing-press",
+      "isCustom": false,
+      "name": "Overhead Standing Press (OHSP)"
+  },
+  {
+      "id": "pull-up",
+      "isCustom": false,
+      "name": "Pull-up"
+  },
+  {
+      "id": "barbell-back-squat",
+      "isCustom": false,
+      "name": "Barbell Back Squat"
+  },
+  {
+      "id": "deadlift",
+      "isCustom": false,
+      "name": "Deadlift"
+  },
+  {
+      "id": "reverse-dead-lift",
+      "isCustom": false,
+      "name": "Reverse Deadlift (RDL)"
+  },
+  {
+      "id": "dead-bug",
+      "isCustom": false,
+      "name": "Dead Bug"
+  },
+  {
+      "id": "bird-dog",
+      "isCustom": false,
+      "name": "Bird Dog"
+  }
+]

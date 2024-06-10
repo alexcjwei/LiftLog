@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		910BA7E22C1513D300F742B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BA7E12C1513D300F742B7 /* Exercise.swift */; };
+		910BA7E42C1513E100F742B7 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BA7E32C1513E100F742B7 /* Set.swift */; };
+		910BA7E62C1513EC00F742B7 /* WorkoutExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BA7E52C1513EC00F742B7 /* WorkoutExercise.swift */; };
+		910BA7E82C152EC900F742B7 /* AddExerciseToWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BA7E72C152EC900F742B7 /* AddExerciseToWorkoutView.swift */; };
+		911A31722C179E6B00DF4C11 /* CreateExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A31712C179E6B00DF4C11 /* CreateExerciseView.swift */; };
+		9175E94F2C166A8B00074DD7 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175E94E2C166A8B00074DD7 /* WorkoutStore.swift */; };
+		9175E9512C168E0200074DD7 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175E9502C168E0200074DD7 /* Bundle-Decodable.swift */; };
+		9175E9532C168F6500074DD7 /* ExerciseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175E9522C168F6500074DD7 /* ExerciseStore.swift */; };
+		9175E9552C1692AB00074DD7 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 9175E9542C1692AB00074DD7 /* exercises.json */; };
+		91E4E6982C1382D8008765DA /* LiftLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4E6972C1382D8008765DA /* LiftLogApp.swift */; };
+		91E4E69A2C1382D8008765DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4E6992C1382D8008765DA /* ContentView.swift */; };
+		91E4E69C2C1382DB008765DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E4E69B2C1382DB008765DA /* Assets.xcassets */; };
+		91E4E69F2C1382DB008765DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E4E69E2C1382DB008765DA /* Preview Assets.xcassets */; };
+		91E4E6A82C13850D008765DA /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4E6A72C13850D008765DA /* WorkoutsView.swift */; };
+		91E4E6AA2C138D3C008765DA /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4E6A92C138D3C008765DA /* ExercisesView.swift */; };
+		91E4E6AC2C138E2F008765DA /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4E6AB2C138E2F008765DA /* WorkoutDetail.swift */; };
+		91E4E6AE2C1391E9008765DA /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4E6AD2C1391E9008765DA /* Workout.swift */; };
+		91E4E6B42C13B7A7008765DA /* WorkoutExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4E6B32C13B7A7008765DA /* WorkoutExerciseDetail.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		910BA7E12C1513D300F742B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		910BA7E32C1513E100F742B7 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		910BA7E52C1513EC00F742B7 /* WorkoutExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExercise.swift; sourceTree = "<group>"; };
+		910BA7E72C152EC900F742B7 /* AddExerciseToWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseToWorkoutView.swift; sourceTree = "<group>"; };
+		911A31712C179E6B00DF4C11 /* CreateExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseView.swift; sourceTree = "<group>"; };
+		9175E94E2C166A8B00074DD7 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
+		9175E9502C168E0200074DD7 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		9175E9522C168F6500074DD7 /* ExerciseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseStore.swift; sourceTree = "<group>"; };
+		9175E9542C1692AB00074DD7 /* exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
+		91E4E6942C1382D8008765DA /* LiftLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiftLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91E4E6972C1382D8008765DA /* LiftLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftLogApp.swift; sourceTree = "<group>"; };
+		91E4E6992C1382D8008765DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		91E4E69B2C1382DB008765DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91E4E69E2C1382DB008765DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		91E4E6A72C13850D008765DA /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
+		91E4E6A92C138D3C008765DA /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
+		91E4E6AB2C138E2F008765DA /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
+		91E4E6AD2C1391E9008765DA /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		91E4E6B32C13B7A7008765DA /* WorkoutExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseDetail.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91E4E6912C1382D8008765DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91E4E68B2C1382D7008765DA = {
+			isa = PBXGroup;
+			children = (
+				91E4E6962C1382D8008765DA /* LiftLog */,
+				91E4E6952C1382D8008765DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91E4E6952C1382D8008765DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91E4E6942C1382D8008765DA /* LiftLog.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91E4E6962C1382D8008765DA /* LiftLog */ = {
+			isa = PBXGroup;
+			children = (
+				91E4E6972C1382D8008765DA /* LiftLogApp.swift */,
+				91E4E6992C1382D8008765DA /* ContentView.swift */,
+				91E4E6AF2C1392E8008765DA /* Views */,
+				91E4E6B02C1392FD008765DA /* Models */,
+				91E4E69B2C1382DB008765DA /* Assets.xcassets */,
+				9175E9542C1692AB00074DD7 /* exercises.json */,
+				91E4E69D2C1382DB008765DA /* Preview Content */,
+			);
+			path = LiftLog;
+			sourceTree = "<group>";
+		};
+		91E4E69D2C1382DB008765DA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				91E4E69E2C1382DB008765DA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		91E4E6AF2C1392E8008765DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91E4E6A92C138D3C008765DA /* ExercisesView.swift */,
+				91E4E6A72C13850D008765DA /* WorkoutsView.swift */,
+				91E4E6AB2C138E2F008765DA /* WorkoutDetail.swift */,
+				91E4E6B32C13B7A7008765DA /* WorkoutExerciseDetail.swift */,
+				910BA7E72C152EC900F742B7 /* AddExerciseToWorkoutView.swift */,
+				911A31712C179E6B00DF4C11 /* CreateExerciseView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91E4E6B02C1392FD008765DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91E4E6AD2C1391E9008765DA /* Workout.swift */,
+				910BA7E52C1513EC00F742B7 /* WorkoutExercise.swift */,
+				910BA7E32C1513E100F742B7 /* Set.swift */,
+				910BA7E12C1513D300F742B7 /* Exercise.swift */,
+				9175E9502C168E0200074DD7 /* Bundle-Decodable.swift */,
+				9175E94E2C166A8B00074DD7 /* WorkoutStore.swift */,
+				9175E9522C168F6500074DD7 /* ExerciseStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91E4E6932C1382D8008765DA /* LiftLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91E4E6A22C1382DB008765DA /* Build configuration list for PBXNativeTarget "LiftLog" */;
+			buildPhases = (
+				91E4E6902C1382D8008765DA /* Sources */,
+				91E4E6912C1382D8008765DA /* Frameworks */,
+				91E4E6922C1382D8008765DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiftLog;
+			productName = LiftLog;
+			productReference = 91E4E6942C1382D8008765DA /* LiftLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91E4E68C2C1382D7008765DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					91E4E6932C1382D8008765DA = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 91E4E68F2C1382D7008765DA /* Build configuration list for PBXProject "LiftLog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91E4E68B2C1382D7008765DA;
+			productRefGroup = 91E4E6952C1382D8008765DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91E4E6932C1382D8008765DA /* LiftLog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91E4E6922C1382D8008765DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91E4E69F2C1382DB008765DA /* Preview Assets.xcassets in Resources */,
+				91E4E69C2C1382DB008765DA /* Assets.xcassets in Resources */,
+				9175E9552C1692AB00074DD7 /* exercises.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91E4E6902C1382D8008765DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				910BA7E42C1513E100F742B7 /* Set.swift in Sources */,
+				91E4E69A2C1382D8008765DA /* ContentView.swift in Sources */,
+				91E4E6AE2C1391E9008765DA /* Workout.swift in Sources */,
+				91E4E6A82C13850D008765DA /* WorkoutsView.swift in Sources */,
+				9175E9512C168E0200074DD7 /* Bundle-Decodable.swift in Sources */,
+				9175E94F2C166A8B00074DD7 /* WorkoutStore.swift in Sources */,
+				91E4E6B42C13B7A7008765DA /* WorkoutExerciseDetail.swift in Sources */,
+				910BA7E62C1513EC00F742B7 /* WorkoutExercise.swift in Sources */,
+				910BA7E82C152EC900F742B7 /* AddExerciseToWorkoutView.swift in Sources */,
+				911A31722C179E6B00DF4C11 /* CreateExerciseView.swift in Sources */,
+				91E4E6AA2C138D3C008765DA /* ExercisesView.swift in Sources */,
+				9175E9532C168F6500074DD7 /* ExerciseStore.swift in Sources */,
+				91E4E6AC2C138E2F008765DA /* WorkoutDetail.swift in Sources */,
+				91E4E6982C1382D8008765DA /* LiftLogApp.swift in Sources */,
+				910BA7E22C1513D300F742B7 /* Exercise.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		91E4E6A02C1382DB008765DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		91E4E6A12C1382DB008765DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91E4E6A32C1382DB008765DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LiftLog/Preview Content\"";
+				DEVELOPMENT_TEAM = X6HUGWX733;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = alexwei.LiftLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91E4E6A42C1382DB008765DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LiftLog/Preview Content\"";
+				DEVELOPMENT_TEAM = X6HUGWX733;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = alexwei.LiftLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91E4E68F2C1382D7008765DA /* Build configuration list for PBXProject "LiftLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91E4E6A02C1382DB008765DA /* Debug */,
+				91E4E6A12C1382DB008765DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91E4E6A22C1382DB008765DA /* Build configuration list for PBXNativeTarget "LiftLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91E4E6A32C1382DB008765DA /* Debug */,
+				91E4E6A42C1382DB008765DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91E4E68C2C1382D7008765DA /* Project object */;
+}
