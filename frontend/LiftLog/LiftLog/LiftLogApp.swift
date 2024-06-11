@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct LiftLogApp: App {
+    @State private var exerciseStore = ExerciseStore()
+    @State private var workoutStore = WorkoutStore()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(exerciseStore)
+                .environment(workoutStore)
         }
     }
 }

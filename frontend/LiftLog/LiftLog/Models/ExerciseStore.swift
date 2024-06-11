@@ -43,7 +43,7 @@ class ExerciseStore {
         userExercises = []
     }
     
-    func addNewExercise(exercise: Exercise) {
+    func addExercise(exercise: Exercise) {
         userExercises.insert(exercise, at: 0)
     }
 }

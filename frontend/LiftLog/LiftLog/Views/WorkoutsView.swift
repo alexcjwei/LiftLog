@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct WorkoutsView: View {
-    @State private var viewModel = ViewModel()
+    @Environment(WorkoutStore.self) private var workoutStore
     
     var body: some View {
+        @Bindable var workoutStore = workoutStore
         NavigationStack {
             List {
                 // Links to each workout
-                ForEach($viewModel.workoutStore.workouts) {$workout in
+                ForEach($workoutStore.workouts) {$workout in
                     NavigationLink {
                         WorkoutDetail(workout: $workout)
                     } label: {
@@ -23,21 +24,21 @@ struct WorkoutsView: View {
                     // Make a copy of the workout
                     .swipeActions(edge: .leading) {
                         Button {
-                            viewModel.workoutStore.addWorkout(workout: workout.copy())
+                            workoutStore.addWorkout(workout: workout.copy())
                         } label: {
                             Label("Copy", systemImage: "doc.on.doc.fill")
                         }
                         .tint(.indigo)
                     }
                 }
-                .onDelete(perform: viewModel.workoutStore.deleteWorkout)
-                .onMove(perform: viewModel.workoutStore.moveWorkout)
+                .onDelete(perform: workoutStore.deleteWorkout)
+                .onMove(perform: workoutStore.moveWorkout)
             }
             .toolbar {
                 // Add new workout button
                 ToolbarItem(placement: .bottomBar) {
                     Button {
-                        viewModel.workoutStore.newWorkout()
+                        workoutStore.newWorkout()
                     } label: {
                         Label("New Workout", systemImage: "plus.circle.fill")
                             .labelStyle(.titleAndIcon)
@@ -52,12 +53,7 @@ struct WorkoutsView: View {
     }
 }
 
-extension WorkoutsView {
-    class ViewModel {
-        var workoutStore = WorkoutStore()
-    }
-}
-
 #Preview {
-    WorkoutsView()
+    var workoutStore = WorkoutStore()
+    return WorkoutsView().environment(workoutStore)
 }

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CreateExerciseView: View {
-    private let viewModel = ViewModel()
-
+    @Environment(ExerciseStore.self) private var exerciseStore
     @Environment(\.dismiss) var dismiss
     @State private var exercise = Exercise(name: "", isCustom: true)
     
@@ -18,7 +17,7 @@ struct CreateExerciseView: View {
         if searchText.isEmpty {
             return []
         } else {
-            return viewModel.exerciseStore.exercises.filter { $0.name.contains(searchText) }
+            return exerciseStore.exercises.filter { $0.name.contains(searchText) }
         }
     }
     
@@ -29,7 +28,7 @@ struct CreateExerciseView: View {
                     TextField("Name", text: $exercise.name)
                         .textInputAutocapitalization(.words)
                     Button("Create") {
-                        viewModel.exerciseStore.addNewExercise(exercise: exercise)
+                        exerciseStore.addExercise(exercise: exercise)
                         dismiss()
                     }
                     .disabled(exercise.name.isEmpty)
@@ -53,12 +52,8 @@ struct CreateExerciseView: View {
     }
 }
 
-extension CreateExerciseView {
-    class ViewModel {
-        var exerciseStore = ExerciseStore()
-    }
-}
-
 #Preview {
-    CreateExerciseView()
+    var exerciseStore = ExerciseStore()
+    return CreateExerciseView()
+        .environment(exerciseStore)
 }

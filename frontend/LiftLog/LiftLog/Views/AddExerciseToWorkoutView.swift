@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct AddExerciseToWorkoutView: View {
-    private let viewModel = ViewModel()
+    @Environment(ExerciseStore.self) private var exerciseStore
     @State private var searchText = ""
-    @State private var isSearchActive = true
     @State private var selectedFilterOption: FilterOptions = .all
     @State private var isShowingCreateExerciseSheet = false
 
@@ -31,11 +30,11 @@ struct AddExerciseToWorkoutView: View {
     private var filterResults: [Exercise] {
         switch selectedFilterOption {
         case .all:
-            return viewModel.exerciseStore.exercises
+            return exerciseStore.exercises
         case .preset:
-            return viewModel.exerciseStore.predefinedExercises
+            return exerciseStore.predefinedExercises
         case .mine:
-            return viewModel.exerciseStore.userExercises
+            return exerciseStore.userExercises
         }
     }
     
@@ -75,16 +74,12 @@ struct AddExerciseToWorkoutView: View {
     }
 }
 
-extension AddExerciseToWorkoutView {
-    class ViewModel {
-        let exerciseStore = ExerciseStore()
-    }
-}
-
 #Preview {
+    var exerciseStore = ExerciseStore()
     return AddExerciseToWorkoutView { selectedItem in
         if let selectedItem = selectedItem {
             print(selectedItem.name)
         }
     }
+    .environment(exerciseStore)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exercise: Identifiable, Codable {
+struct Exercise: Identifiable, Codable, Equatable {
     private(set) var id: String = UUID().uuidString
     var name: String
     private(set) var isCustom = false
