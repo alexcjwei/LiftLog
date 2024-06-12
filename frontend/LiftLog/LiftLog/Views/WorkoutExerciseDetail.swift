@@ -9,8 +9,6 @@ import SwiftUI
 
 struct WorkoutExerciseDetail: View {
     @Binding var exercise: WorkoutExercise
-    @FocusState private var isFocused: Bool
-
 
     var body: some View {
         NavigationStack {
@@ -23,16 +21,7 @@ struct WorkoutExerciseDetail: View {
                 }
                 List {
                     ForEach($exercise.sets) {$myset in
-                        HStack {
-                            TextField("Weight", value: $myset.weight, format: .number)
-                                .keyboardType(.decimalPad)
-                                .textFieldStyle(.roundedBorder)
-                                .focused($isFocused)
-                            TextField("Reps", value: $myset.reps, format: .number)
-                                .keyboardType(.decimalPad)
-                                .textFieldStyle(.roundedBorder)
-                                .focused($isFocused)
-                        }
+                        SetRow(set: $myset)
                     }
                     .onDelete(perform: delete)
                     .onMove(perform: move)
@@ -46,11 +35,6 @@ struct WorkoutExerciseDetail: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     EditButton()
-                }
-                ToolbarItem(placement: .keyboard) {
-                    Button("Done") {
-                        isFocused = false
-                    }
                 }
             }
             .navigationTitle(exercise.exercise.name)

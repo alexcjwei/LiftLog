@@ -14,4 +14,8 @@ struct Set: Identifiable, Codable {
     var weight: Float?
     var unit: String?
     var duration: Duration?
+    
+    var inProgress: Bool {
+        return weight != nil || reps != nil || duration != nil
+    }
 }

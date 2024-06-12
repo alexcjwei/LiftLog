@@ -16,21 +16,7 @@ struct WorkoutDetail: View {
             DatePicker("Change workout date", selection: $workout.date)
                 .labelsHidden()
             // List each exercise in the workout
-            List {
-                ForEach($workout.exercises) {$exercise in
-                    NavigationLink {
-                        WorkoutExerciseDetail(exercise: $exercise)
-                    } label: {
-                        Text(exercise.exercise.name)
-                    }
-                }
-                .onDelete(perform: { indexSet in
-                    workout.deleteExercise(at: indexSet)
-                })
-                .onMove(perform: { indices, newOffset in
-                    workout.moveExercise(from: indices, to: newOffset)
-                })
-            }
+            WorkoutExerciseList(workout: $workout)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     EditButton()
@@ -58,7 +44,12 @@ struct WorkoutDetail: View {
 
 #Preview {
     struct Preview: View {
-        @State var workout  = Workout()
+        @State var workout  = Workout(
+            exercises: [
+                WorkoutExercise(exercise: Exercise(name: "Test"))
+            ]
+        )
+        
         var body: some View {
             WorkoutDetail(workout: $workout)
         }
