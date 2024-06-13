@@ -7,22 +7,6 @@
 
 import SwiftUI
 
-struct WorkoutExerciseRow: View {
-    @Binding var exercise: WorkoutExercise
-    
-    var body: some View {
-        NavigationLink {
-            WorkoutExerciseDetail(exercise: $exercise)
-        } label: {
-            if exercise.inProgress {
-                Label(exercise.exercise.name, systemImage: "checkmark.circle.fill")
-            } else {
-                Label(exercise.exercise.name, systemImage: "circle")
-            }
-        }
-    }
-}
-
 struct WorkoutExerciseList: View {
     @Binding var workout: Workout
     
