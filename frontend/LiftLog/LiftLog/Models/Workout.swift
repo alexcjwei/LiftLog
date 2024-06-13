@@ -29,7 +29,7 @@ struct Workout: Identifiable, Codable {
     
     func copy() -> Workout {
         let newExercises = exercises.map { WorkoutExercise(exercise: $0.exercise)}
-        return Workout(exercises: newExercises)
+        return Workout(name: "\(name) (copy)", exercises: newExercises)
     }
     
 }
