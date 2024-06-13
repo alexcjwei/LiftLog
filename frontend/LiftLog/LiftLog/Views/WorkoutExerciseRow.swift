@@ -28,7 +28,7 @@ struct WorkoutExerciseRow: View {
 
 #Preview {
     struct Preview: View {
-        @State private var exercise = WorkoutExercise(exercise: Exercise(name: "Bench Press"), sets: [Set(reps: 10)])
+        @State private var exercise = WorkoutExercise(exercise: Exercise(name: "Bench Press"), sets: [ExerciseSet(reps: 10)])
         
         var body: some View {
             WorkoutExerciseRow(exercise: $exercise)

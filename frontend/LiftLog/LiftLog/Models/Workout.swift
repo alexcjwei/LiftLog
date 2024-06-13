@@ -38,18 +38,18 @@ struct Workout: Identifiable, Codable {
 let sampleWorkouts: [Workout] = [
     Workout(exercises: [
         WorkoutExercise(exercise: sampleExercises[0], sets: [
-            Set(reps: 15, weight: 95),
-            Set(reps: 14, weight: 95),
-            Set(reps: 12, weight: 95),
+            ExerciseSet(reps: 15, weight: 95),
+            ExerciseSet(reps: 14, weight: 95),
+            ExerciseSet(reps: 12, weight: 95),
         ]),
         WorkoutExercise(exercise: sampleExercises[1], sets: [
-            Set(reps: 15, weight: 95),
-            Set(reps: 15, weight: 95),
-            Set(reps: 15, weight: 95),
+            ExerciseSet(reps: 15, weight: 95),
+            ExerciseSet(reps: 15, weight: 95),
+            ExerciseSet(reps: 15, weight: 95),
         ]),
         WorkoutExercise(exercise: sampleExercises[4], sets: [
-            Set(duration: .seconds(30)),
-            Set(duration: .seconds(30)),
+            ExerciseSet(duration: .seconds(30)),
+            ExerciseSet(duration: .seconds(30)),
         ])
     ]),
 ]

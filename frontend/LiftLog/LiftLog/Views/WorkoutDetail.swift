@@ -9,7 +9,6 @@ import SwiftUI
 
 struct WorkoutDetail: View {
     @Binding var workout: Workout
-    @State private var isShowingSheet = false
 
     var body: some View {
         NavigationStack {
@@ -17,24 +16,6 @@ struct WorkoutDetail: View {
                 .labelsHidden()
             // List each exercise in the workout
             WorkoutExerciseList(workout: $workout)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem(placement: .bottomBar) {
-                    Button("Add Exercise", systemImage: "plus.circle.fill") {
-                        isShowingSheet.toggle()
-                    }
-                }
-            }
-            .sheet(isPresented: $isShowingSheet) {
-                AddExerciseToWorkoutView { selectedExercise in
-                    if let selectedExercise = selectedExercise {
-                        workout.newExercise(exercise: selectedExercise)
-                    }
-                    isShowingSheet = false
-                }
-            }
             .navigationTitle($workout.name)
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -44,11 +25,7 @@ struct WorkoutDetail: View {
 
 #Preview {
     struct Preview: View {
-        @State var workout  = Workout(
-            exercises: [
-                WorkoutExercise(exercise: Exercise(name: "Test"))
-            ]
-        )
+        @State var workout = sampleWorkouts[0]
         
         var body: some View {
             WorkoutDetail(workout: $workout)

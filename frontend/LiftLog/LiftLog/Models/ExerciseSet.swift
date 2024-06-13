@@ -1,5 +1,5 @@
 //
-//  Set.swift
+//  ExerciseSet.swift
 //  LiftLog
 //
 //  Created by Alex Wei on 6/8/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Set: Identifiable, Codable {
+struct ExerciseSet: Identifiable, Codable {
     private(set) var id = UUID()
 
     var reps: Int?

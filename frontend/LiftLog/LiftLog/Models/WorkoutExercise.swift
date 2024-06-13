@@ -10,7 +10,7 @@ import Foundation
 struct WorkoutExercise: Identifiable, Codable {
     private(set) var id: UUID = UUID()
     var exercise: Exercise
-    var sets: [Set] = []
+    var sets: [ExerciseSet] = []
     
     var inProgress: Bool {
         for set in sets {

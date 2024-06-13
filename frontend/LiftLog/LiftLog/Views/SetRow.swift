@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SetRow: View {
-    @Binding var set: Set
+    @Binding var set: ExerciseSet
 
     var body: some View {
         HStack {
@@ -24,7 +24,7 @@ struct SetRow: View {
 
 #Preview {
     struct Preview: View {
-        @State var set = Set()
+        @State var set = ExerciseSet()
         
         var body: some View {
             SetRow(set: $set)

@@ -27,7 +27,7 @@ struct WorkoutExerciseDetail: View {
                     .onMove(perform: move)
                 }
                 Button {
-                    exercise.sets.append(Set())
+                    exercise.sets.append(ExerciseSet())
                 } label: {
                     Label("Add set", systemImage: "plus")
                 }
