@@ -26,6 +26,8 @@ struct WorkoutExerciseDetail: View {
                     } label: {
                         Label("Add set", systemImage: "plus")
                     }
+                    TextField("Note", text: $exercise.note, axis: .vertical)
+                        .lineLimit(5...10)
                 }
                 NavigationLink {
                     ExerciseHistoryView(exercise: exercise.exercise)

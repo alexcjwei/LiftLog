@@ -11,6 +11,7 @@ struct WorkoutExercise: Identifiable, Codable {
     private(set) var id: UUID = UUID()
     var exercise: Exercise
     var sets: [ExerciseSet] = []
+    var note: String = ""
     
     var inProgress: Bool {
         for set in sets {
