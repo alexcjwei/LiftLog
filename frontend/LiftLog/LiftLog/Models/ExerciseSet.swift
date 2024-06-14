@@ -18,4 +18,16 @@ struct ExerciseSet: Identifiable, Codable {
     var inProgress: Bool {
         return weight != nil || reps != nil || duration != nil
     }
+    
+    var detail: String {
+        var components = [String]()
+        if let weight = weight {
+            components.append("\(weight)")
+        }
+        if let reps = reps {
+            components.append("x \(reps) reps")
+        }
+
+        return components.joined(separator: " ")
+    }
 }

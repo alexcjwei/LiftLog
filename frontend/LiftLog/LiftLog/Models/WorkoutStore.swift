@@ -55,4 +55,14 @@ class WorkoutStore {
     func moveWorkout(from source: IndexSet, to destination: Int) {
         workouts.move(fromOffsets: source, toOffset: destination)
     }
+    
+    func getExerciseHistory(exercise: Exercise) -> [(workout: Workout, exercises: [WorkoutExercise])] {
+        let exerciseHistory: [(workout: Workout, exercises: [WorkoutExercise])] = workouts.reduce(into: []) { accum, workout in
+            let filteredWorkoutExercises = workout.exercises.filter { $0.exercise.id == exercise.id }
+            if !filteredWorkoutExercises.isEmpty {
+                accum.append((workout: workout, exercises: filteredWorkoutExercises))
+            }
+        }
+        return exerciseHistory
+    }
 }

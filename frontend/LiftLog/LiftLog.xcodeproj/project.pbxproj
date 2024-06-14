@@ -13,6 +13,7 @@
 		910BA7E82C152EC900F742B7 /* AddExerciseToWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910BA7E72C152EC900F742B7 /* AddExerciseToWorkoutView.swift */; };
 		9115A6ED2C192AAA00750408 /* WorkoutExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9115A6EC2C192AAA00750408 /* WorkoutExerciseList.swift */; };
 		9115A6EF2C1A8C5D00750408 /* WorkoutExerciseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9115A6EE2C1A8C5D00750408 /* WorkoutExerciseRow.swift */; };
+		9115A6F12C1CF15500750408 /* ExerciseHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9115A6F02C1CF15500750408 /* ExerciseHistoryView.swift */; };
 		911A31722C179E6B00DF4C11 /* CreateExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A31712C179E6B00DF4C11 /* CreateExerciseView.swift */; };
 		911A31762C18BF2B00DF4C11 /* SetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A31752C18BF2B00DF4C11 /* SetRow.swift */; };
 		9175E94F2C166A8B00074DD7 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175E94E2C166A8B00074DD7 /* WorkoutStore.swift */; };
@@ -37,6 +38,7 @@
 		910BA7E72C152EC900F742B7 /* AddExerciseToWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseToWorkoutView.swift; sourceTree = "<group>"; };
 		9115A6EC2C192AAA00750408 /* WorkoutExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseList.swift; sourceTree = "<group>"; };
 		9115A6EE2C1A8C5D00750408 /* WorkoutExerciseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutExerciseRow.swift; sourceTree = "<group>"; };
+		9115A6F02C1CF15500750408 /* ExerciseHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryView.swift; sourceTree = "<group>"; };
 		911A31712C179E6B00DF4C11 /* CreateExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseView.swift; sourceTree = "<group>"; };
 		911A31752C18BF2B00DF4C11 /* SetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRow.swift; sourceTree = "<group>"; };
 		9175E94E2C166A8B00074DD7 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				910BA7E72C152EC900F742B7 /* AddExerciseToWorkoutView.swift */,
 				911A31712C179E6B00DF4C11 /* CreateExerciseView.swift */,
 				911A31752C18BF2B00DF4C11 /* SetRow.swift */,
+				9115A6F02C1CF15500750408 /* ExerciseHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				91E4E6AA2C138D3C008765DA /* ExercisesView.swift in Sources */,
 				9175E9532C168F6500074DD7 /* ExerciseStore.swift in Sources */,
 				91E4E6AC2C138E2F008765DA /* WorkoutDetail.swift in Sources */,
+				9115A6F12C1CF15500750408 /* ExerciseHistoryView.swift in Sources */,
 				91E4E6982C1382D8008765DA /* LiftLogApp.swift in Sources */,
 				911A31762C18BF2B00DF4C11 /* SetRow.swift in Sources */,
 				910BA7E22C1513D300F742B7 /* Exercise.swift in Sources */,

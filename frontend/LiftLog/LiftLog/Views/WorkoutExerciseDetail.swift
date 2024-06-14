@@ -12,24 +12,31 @@ struct WorkoutExerciseDetail: View {
 
     var body: some View {
         NavigationStack {
-            Form {
-                HStack {
-                    Text("Weight")
-                    Spacer()
-                    Text("Reps")
-                    Spacer()
-                }
-                List {
-                    ForEach($exercise.sets) {$myset in
-                        SetRow(set: $myset)
+            VStack {
+                Form {
+                    HStack {
+                        Text("Weight")
+                        Spacer()
+                        Text("Reps")
+                        Spacer()
                     }
-                    .onDelete(perform: delete)
-                    .onMove(perform: move)
+                    List {
+                        ForEach($exercise.sets) {$myset in
+                            SetRow(set: $myset)
+                        }
+                        .onDelete(perform: delete)
+                        .onMove(perform: move)
+                    }
+                    Button {
+                        exercise.sets.append(ExerciseSet())
+                    } label: {
+                        Label("Add set", systemImage: "plus")
+                    }
                 }
-                Button {
-                    exercise.sets.append(ExerciseSet())
+                NavigationLink {
+                    ExerciseHistoryView(exercise: exercise.exercise)
                 } label: {
-                    Label("Add set", systemImage: "plus")
+                    Text("See \(exercise.exercise.name) History")
                 }
             }
             .toolbar {
@@ -39,6 +46,7 @@ struct WorkoutExerciseDetail: View {
             }
             .navigationTitle(exercise.exercise.name)
             .navigationBarTitleDisplayMode(.inline)
+
         }
     }
     
