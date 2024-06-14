@@ -12,11 +12,9 @@ struct ExerciseSet: Identifiable, Codable {
 
     var reps: Int?
     var weight: Float?
-    var unit: String?
-    var duration: Duration?
     
     var inProgress: Bool {
-        return weight != nil || reps != nil || duration != nil
+        return weight != nil || reps != nil
     }
     
     var detail: String {

@@ -47,9 +47,5 @@ let sampleWorkouts: [Workout] = [
             ExerciseSet(reps: 15, weight: 95),
             ExerciseSet(reps: 15, weight: 95),
         ]),
-        WorkoutExercise(exercise: sampleExercises[4], sets: [
-            ExerciseSet(duration: .seconds(30)),
-            ExerciseSet(duration: .seconds(30)),
-        ])
     ]),
 ]

@@ -65,7 +65,7 @@ struct ExercisesView: View {
                             systemImage: showHideSystemImage(isShowingDefaultExercises))
                         }
                     } label: {
-                        Label("Fitler", systemImage: "line.3.horizontal.decrease")
+                        Label("Filter", systemImage: "line.3.horizontal.circle")
                     }
                 }
             }

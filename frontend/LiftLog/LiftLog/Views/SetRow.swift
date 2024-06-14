@@ -15,7 +15,7 @@ struct SetRow: View {
             TextField("Weight", value: $set.weight, format: .number)
                 .keyboardType(.decimalPad)
                 .textFieldStyle(.roundedBorder)
-            TextField("Reps", value: $set.reps, format: .number)
+            TextField("Reps / Duration", value: $set.reps, format: .number)
                 .keyboardType(.decimalPad)
                 .textFieldStyle(.roundedBorder)
         }

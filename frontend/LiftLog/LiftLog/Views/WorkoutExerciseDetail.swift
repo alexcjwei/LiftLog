@@ -14,12 +14,6 @@ struct WorkoutExerciseDetail: View {
         NavigationStack {
             VStack {
                 Form {
-                    HStack {
-                        Text("Weight")
-                        Spacer()
-                        Text("Reps")
-                        Spacer()
-                    }
                     List {
                         ForEach($exercise.sets) {$myset in
                             SetRow(set: $myset)
