@@ -12,9 +12,10 @@ struct ExerciseSet: Identifiable, Codable {
 
     var reps: Int?
     var weight: Float?
+    var time: Float?
     
     var inProgress: Bool {
-        return weight != nil || reps != nil
+        return weight != nil || reps != nil || time != nil
     }
     
     var detail: String {
@@ -24,6 +25,9 @@ struct ExerciseSet: Identifiable, Codable {
         }
         if let reps = reps {
             components.append("x \(reps) reps")
+        }
+        if let time = time {
+            components.append("x \(time) sec")
         }
 
         return components.joined(separator: " ")

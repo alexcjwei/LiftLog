@@ -16,7 +16,7 @@ struct WorkoutExerciseDetail: View {
                 Form {
                     List {
                         ForEach($exercise.sets) {$myset in
-                            SetRow(set: $myset)
+                            SetRow(set: $myset, effortType: exercise.effortType)
                         }
                         .onDelete(perform: delete)
                         .onMove(perform: move)
@@ -26,6 +26,12 @@ struct WorkoutExerciseDetail: View {
                     } label: {
                         Label("Add set", systemImage: "plus")
                     }
+                    Picker("Effort Type", selection: $exercise.effortType) {
+                        ForEach(EffortType.allCases, id: \.self) {
+                            Text($0.rawValue)
+                        }
+                    }
+                    .pickerStyle(.segmented)
                     TextField("Note", text: $exercise.note, axis: .vertical)
                         .lineLimit(5...10)
                 }
