@@ -1,0 +1,11 @@
+<h1>Workouts</h1>
+<a href={% url 'workouts:create' %}>Create a new workout</a>
+<ul>
+{% if workout_list %}
+    {% for workout in workout_list %}
+        <li><a href={% url 'workouts:detail' workout.id %}>{{ workout.name }} - {{ workout.date }}</a></li>
+    {% endfor %}
+{% else %}
+    <li>No workouts yet.</li>
+{% endif %}
+</ul>
