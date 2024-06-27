@@ -1,5 +1,4 @@
 <ul>
-    <li><a href={% url 'accounts:profile' %}>Profile</a></li>
     <li><a href={% url 'exercises:index' %}>Exercises</a></li>
     <li><a href={% url 'workouts:index' %}>Workouts</a></li>
     {% if user.is_authenticated %}

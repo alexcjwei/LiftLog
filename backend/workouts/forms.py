@@ -15,3 +15,9 @@ class WorkoutForm(forms.ModelForm):
         self.workout.user = self.request.user
         self.workout.save()
         return super().form_valid(form)
+
+
+class WorkoutExerciseForm(forms.ModelForm):
+    class Meta:
+        model = models.WorkoutExercise
+        fields = ["exercise"]
