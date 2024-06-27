@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
+    class Meta:
+        db_table = "profiles"
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
