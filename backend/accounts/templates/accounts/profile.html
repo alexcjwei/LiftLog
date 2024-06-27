@@ -1,5 +1,12 @@
+{% extends 'accounts/base.html'%}
+
+{% block content %}
 {% if profile %}
     <h1>{{ profile.user.username }}</h1>
+    <ul>
+        <li><a href={% url "accounts:password_change" %}>Change Password</a></li>
+    </ul>
 {% else %}
     <h1>No profile found</h1>
 {% endif %}
+{% endblock %}

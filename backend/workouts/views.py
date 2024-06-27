@@ -9,6 +9,11 @@ from workouts import forms
 class WorkoutListView(LoginRequiredMixin, generic.ListView):
     model = models.Workout
 
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(profile=self.request.user.profile)
+        return qs
+
 
 class WorkoutDetailView(LoginRequiredMixin, generic.DetailView):
     model = models.Workout

@@ -1,4 +1,10 @@
 <ul>
+    <li><a href={% url 'accounts:profile' %}>Profile</a></li>
     <li><a href={% url 'exercises:index' %}>Exercises</a></li>
     <li><a href={% url 'workouts:index' %}>Workouts</a></li>
+    {% if user.is_authenticated %}
+        <li><a href={% url 'accounts:logout' %}>Logout</a></li>
+    {% else %}
+        <li><a href={% url 'accounts:login' %}>Login</a></li>
+    {% endif %}
 </ul>
