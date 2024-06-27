@@ -21,3 +21,9 @@ class WorkoutExerciseForm(forms.ModelForm):
     class Meta:
         model = models.WorkoutExercise
         fields = ["exercise"]
+
+
+class SetForm(forms.ModelForm):
+    class Meta:
+        model = models.Set
+        fields = ["weight", "weight_unit", "repetitions", "seconds"]

@@ -6,7 +6,11 @@
 <ul>
 {% if workout_list %}
     {% for workout in workout_list %}
-        <li><a href={% url 'workouts:detail' workout.id %}>{{ workout }} </a></li>
+        <li>
+            <a href={% url 'workouts:detail' workout.id %}>{{ workout }}</a>
+            <a href={% url 'workouts:workout_copy' workout.id %}>Copy</a>
+            <a href={% url 'workouts:workout_delete' workout.id %}>Delete</a>
+        </li>
     {% endfor %}
 {% else %}
     <li>No workouts yet.</li>

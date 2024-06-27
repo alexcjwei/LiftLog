@@ -1,5 +1,20 @@
-{% extends 'workouts/base.html' %}
+{% extends 'workouts/workoutexercise_base.html' %}
 
 {% block content %}
-Hello, world!
+    {{ block.super }}
+    <ul>
+    {% for set in workoutexercise.sets.all %}
+        <li>
+            {{ set }}
+            <a href={%url 'workouts:set_update' pk=set.id%}>Edit</a>
+            <a href={%url 'workouts:set_delete' pk=set.id%}>Delete</a>
+            <a href={%url 'workouts:set_copy' pk=set.id%}>Copy</a>
+        </li>
+    {% endfor %}
+    </ul>
+    <form method="post" action="{% url 'workouts:set_add' workout_exercise_id=workoutexercise.id %}">
+        {% csrf_token %}
+        {{ add_set_form.as_p }}
+        <button type="submit">Add Set</button>
+    </form>
 {% endblock %}

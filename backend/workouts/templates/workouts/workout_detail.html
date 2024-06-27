@@ -1,14 +1,14 @@
-{% extends 'workouts/base.html' %}
+{% extends 'workouts/workout_base.html' %}
 
 {% block content %}
-<h1>{{ workout }}</h1>
+{{ block.super }}
 <ul>
     {% if workout.workoutexercise_set.count > 0 %}
         {% for workout_exercise in workout.workoutexercise_set.all %}
             <li>
                 {{ workout_exercise }}
-                <a href="{% url 'workouts:workout_exercise_detail' workout_id=workout.id pk=workout_exercise.id %}">Edit</a>
-                <a href="{% url 'workouts:workout_exercise_delete' workout_id=workout.id workout_exercise_id=workout_exercise.id %}">Delete</a>
+                <a href="{% url 'workouts:workout_exercise_detail' pk=workout_exercise.id %}">Edit</a>
+                <a href="{% url 'workouts:workout_exercise_delete' workout_exercise_id=workout_exercise.id %}">Delete</a>
             </li>
         {% endfor %}
     {% else %}

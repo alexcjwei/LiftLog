@@ -38,8 +38,29 @@ class WorkoutCreateView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
 
+@login_required
+def workout_delete(request, pk):
+    workout = get_object_or_404(models.Workout, pk=pk)
+    workout.delete()
+    return redirect("workouts:index")
+
+
+@login_required
+def workout_copy(request, pk):
+    workout = get_object_or_404(models.Workout, pk=pk)
+    workout.pk = None
+    workout.save()
+    return redirect("workouts:index")
+
+
 class WorkoutExerciseDetailView(LoginRequiredMixin, generic.DetailView):
     model = models.WorkoutExercise
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["workout"] = context["workoutexercise"].workout
+        context["add_set_form"] = forms.SetForm()
+        return context
 
 
 @login_required
@@ -52,13 +73,53 @@ def workout_exercise_add(request, workout_id):
             workout_exercise.save()
             return redirect("workouts:detail", pk=workout_id)
 
-    else:
-        form = forms.WorkoutExerciseForm()
-    return render(request, "workouts/workout_exercise_add.html", {"form": form})
-
 
 @login_required
-def workout_exercise_delete(request, workout_id, workout_exercise_id):
+def workout_exercise_delete(request, workout_exercise_id):
     workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
     workout_exercise.delete()
     return redirect("workouts:detail", pk=workout_id)
+
+
+@login_required
+def set_add(request, workout_exercise_id):
+    workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
+    if request.method == "POST":
+        form = forms.SetForm(request.POST)
+        if form.is_valid():
+            set = form.save(commit=False)
+            set.workout_exercise_id = workout_exercise_id
+            set.save()
+            return redirect("workouts:workout_exercise_detail", pk=workout_exercise_id)
+
+
+@login_required
+def set_delete(request, pk):
+    set = get_object_or_404(models.Set, pk=pk)
+    set.delete()
+    return redirect("workouts:workout_exercise_detail", pk=set.workout_exercise_id)
+
+
+@login_required
+def set_copy(request, pk):
+    set = get_object_or_404(models.Set, pk=pk)
+    # A. Wei - By setting the pk to None, Django will create a new instance and autogen a new pk.
+    set.pk = None
+    set.save()
+    return redirect("workouts:workout_exercise_detail", pk=set.workout_exercise_id)
+
+
+class SetDetailView(LoginRequiredMixin, generic.DetailView):
+    model = models.Set
+
+
+class SetUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = models.Set
+    fields = ["weight", "weight_unit", "repetitions", "seconds"]
+    template_name_suffix = "_update_form"
+
+    def get_success_url(self):
+        return reverse_lazy(
+            "workouts:workout_exercise_detail",
+            kwargs={"pk": self.object.workout_exercise.id},
+        )

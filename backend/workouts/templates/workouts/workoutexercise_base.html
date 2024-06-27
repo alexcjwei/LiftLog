@@ -1,0 +1,8 @@
+{% extends 'workouts/workout_base.html' %}
+
+{% block content %}
+    {% with workout=workoutexercise.workout %}
+        {{ block.super }}
+    {% endwith%}
+    <h2>{{ workoutexercise.exercise }}</h2>
+{% endblock %}
