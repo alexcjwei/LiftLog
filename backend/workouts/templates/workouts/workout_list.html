@@ -1,3 +1,6 @@
+{% extends 'workouts/base.html' %}
+
+{% block content %}
 <h1>Workouts</h1>
 <a href={% url 'workouts:create' %}>Create a new workout</a>
 <ul>
@@ -9,3 +12,4 @@
     <li>No workouts yet.</li>
 {% endif %}
 </ul>
+{% endblock %}
