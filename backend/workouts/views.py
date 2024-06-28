@@ -34,6 +34,20 @@ class WorkoutDetailView(LoginRequiredMixin, generic.DetailView):
         return context
 
 
+class WorkoutUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = models.Workout
+    form_class = forms.WorkoutForm
+    template_name_suffix = "_update_form"
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(profile=self.request.user.profile)
+        return qs
+
+    def get_success_url(self):
+        return reverse_lazy("workouts:detail", kwargs={"pk": self.object.id})
+
+
 class WorkoutCreateView(LoginRequiredMixin, generic.CreateView):
     model = models.Workout
     form_class = forms.WorkoutForm

@@ -8,8 +8,8 @@
     {% for workout in workout_list %}
         <li>
             <a href={% url 'workouts:detail' workout.id %}>{{ workout }}</a>
-            <a href={% url 'workouts:workout_copy' workout.id %}>Copy</a>
-            <a href={% url 'workouts:workout_delete' workout.id %}>Delete</a>
+            <a href={% url 'workouts:copy' workout.id %}>Copy</a>
+            <a href={% url 'workouts:delete' workout.id %}>Delete</a>
         </li>
     {% endfor %}
 {% else %}
