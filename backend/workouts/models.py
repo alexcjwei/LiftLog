@@ -4,11 +4,13 @@ from django.urls import reverse
 from accounts.models import Profile
 from exercises.models import Exercise
 
+from datetime import date
+
 
 class Workout(models.Model):
     class Meta:
         db_table = "workouts"
-        ordering = ["-date"]
+        ordering = ["-date", "-updated_at"]
 
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
@@ -25,7 +27,9 @@ class WorkoutExercise(models.Model):
     class Meta:
         db_table = "workout_exercises"
 
-    workout = models.ForeignKey(Workout, on_delete=models.CASCADE)
+    workout = models.ForeignKey(
+        Workout, on_delete=models.CASCADE, related_name="exercises"
+    )
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
 
     def __str__(self):

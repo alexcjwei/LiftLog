@@ -3,8 +3,8 @@
 {% block content %}
 {{ block.super }}
 <ul>
-    {% if workout.workoutexercise_set.count > 0 %}
-        {% for workout_exercise in workout.workoutexercise_set.all %}
+    {% if workout.exercises.count > 0 %}
+        {% for workout_exercise in workout.exercises.all %}
             <li>
                 {{ workout_exercise }}
                 <a href="{% url 'workouts:workout_exercise_detail' pk=workout_exercise.id %}">Edit</a>

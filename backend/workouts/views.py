@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
@@ -48,8 +50,33 @@ def workout_delete(request, pk):
 @login_required
 def workout_copy(request, pk):
     workout = get_object_or_404(models.Workout, pk=pk)
-    workout.pk = None
-    workout.save()
+
+    # Shallow copy the workout
+    new_workout = workout
+    new_workout.pk = None
+    new_workout.name = f"{workout.name} (copy)"
+    new_workout.date = date.today()
+    new_workout.save()
+
+    # Copy exercises
+    exercises = models.WorkoutExercise.objects.filter(workout_id=pk)
+    for workout_exercise in exercises:
+        original_workout_exercise_id = workout_exercise.id
+        new_workout_exercise = workout_exercise
+        new_workout_exercise.pk = None
+        # Relate the new workout to the new exercise
+        new_workout_exercise.workout = new_workout
+        new_workout_exercise.save()
+
+        # Copy sets
+        sets = models.Set.objects.filter(
+            workout_exercise_id=original_workout_exercise_id
+        )
+        for set_ in sets:
+            set_.pk = None
+            set_.workout_exercise = new_workout_exercise
+            set_.save()
+
     return redirect("workouts:index")
 
 
@@ -78,7 +105,7 @@ def workout_exercise_add(request, workout_id):
 def workout_exercise_delete(request, workout_exercise_id):
     workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
     workout_exercise.delete()
-    return redirect("workouts:detail", pk=workout_id)
+    return redirect("workouts:detail", pk=workout_exercise.workout_id)
 
 
 @login_required
