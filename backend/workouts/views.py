@@ -166,7 +166,7 @@ def set_copy(request, pk):
     # A. Wei - By setting the pk to None, Django will create a new instance and autogen a new pk.
     set_.pk = None
     set_.save()
-    return redirect("workouts:workout_exercise_detail", pk=set.workout_exercise_id)
+    return redirect("workouts:workout_exercise_detail", pk=set_.workout_exercise_id)
 
 
 class SetUpdateView(LoginRequiredMixin, generic.UpdateView):

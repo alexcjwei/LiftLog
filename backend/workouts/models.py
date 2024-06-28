@@ -67,7 +67,8 @@ class Set(models.Model):
     def __str__(self):
         components = []
         if self.weight:
-            components.append(f"{self.weight} {self.weight_unit}s")
+            weight = f"{self.weight}".rstrip("0").rstrip(".")
+            components.append(f"{weight} {self.weight_unit}s")
         if self.repetitions:
             components.append(f"{self.repetitions} reps")
         if self.seconds:
