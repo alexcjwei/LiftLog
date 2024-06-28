@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1><a href="{% url 'workouts:detail' pk=workout.id %}">{{ workout }}</a></h1>
+<h1>
+    {{ workout }}
+    <a href="{% url 'workouts:update' pk=workout.id %}">Edit</a>
+</h1>
 {% endblock %}

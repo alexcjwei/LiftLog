@@ -2,6 +2,7 @@
 
 {% block content %}
 <form method="post">{% csrf_token %}
+    <h2>Edit Workout</h2>
     {{ form.as_p }}
     <input type="submit" value="Save">
 </form>
