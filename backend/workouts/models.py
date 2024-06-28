@@ -22,6 +22,13 @@ class Workout(models.Model):
     def __str__(self):
         return f"{self.name} - {self.date}"
 
+    @property
+    def user(self):
+        return self.profile.user
+
+    def can_user_manage(self, user):
+        return self.user == user
+
 
 class WorkoutExercise(models.Model):
     class Meta:
@@ -34,6 +41,13 @@ class WorkoutExercise(models.Model):
 
     def __str__(self):
         return f"{self.exercise.name} x {self.sets.count()} sets"
+
+    @property
+    def user(self):
+        return self.workout.profile.user
+
+    def can_user_manage(self, user):
+        return self.user == user
 
 
 class Set(models.Model):
@@ -60,3 +74,10 @@ class Set(models.Model):
             components.append(f"{self.seconds} sec")
 
         return " - ".join(components)
+
+    @property
+    def user(self):
+        return self.workout_exercise.workout.profile.user
+
+    def can_user_manage(self, user):
+        return self.user == user
