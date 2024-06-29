@@ -8,16 +8,16 @@ from datetime import date
 
 
 class Workout(models.Model):
-    class Meta:
-        db_table = "workouts"
-        ordering = ["-date", "-updated_at"]
-
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     date = models.DateField()
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "workouts"
+        ordering = ["-date", "-updated_at"]
 
     def __str__(self):
         return f"{self.name} - {self.date}"
@@ -31,15 +31,15 @@ class Workout(models.Model):
 
 
 class WorkoutExercise(models.Model):
-    class Meta:
-        db_table = "workout_exercises"
-        ordering = ["order"]
-
     workout = models.ForeignKey(
         Workout, on_delete=models.CASCADE, related_name="exercises"
     )
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
     order = models.PositiveSmallIntegerField()
+
+    class Meta:
+        db_table = "workout_exercises"
+        ordering = ["order"]
 
     def __str__(self):
         return f"{self.exercise.name} x {self.sets.count()} sets"
@@ -74,9 +74,6 @@ class WorkoutExercise(models.Model):
 
 
 class Set(models.Model):
-    class Meta:
-        db_table = "sets"
-
     workout_exercise = models.ForeignKey(
         WorkoutExercise, on_delete=models.CASCADE, related_name="sets"
     )
@@ -86,6 +83,9 @@ class Set(models.Model):
     )
     repetitions = models.PositiveSmallIntegerField(null=True, blank=True)
     seconds = models.PositiveSmallIntegerField(null=True, blank=True)
+
+    class Meta:
+        db_table = "sets"
 
     def __str__(self):
         components = []

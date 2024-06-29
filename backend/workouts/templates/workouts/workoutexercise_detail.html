@@ -5,10 +5,18 @@
     <ul>
     {% for set in workoutexercise.sets.all %}
         <li>
-            {{ set }}
-            <a href={%url 'workouts:set_update' pk=set.id%}>Edit</a>
-            <a href={%url 'workouts:set_delete' pk=set.id%}>Delete</a>
-            <a href={%url 'workouts:set_copy' pk=set.id%}>Copy</a>
+            <div class='horizontal-container'>
+                {{ set }}
+                <a href={%url 'workouts:set_update' pk=set.id%}>Edit</a>
+                <form method="post" action={%url 'workouts:set_delete' set.id%}>
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+                <form method="post" action={%url 'workouts:set_copy' set.id %}>
+                    {% csrf_token %}
+                    <button type="submit">Copy</button>
+                </form>
+            </div>
         </li>
     {% endfor %}
     </ul>

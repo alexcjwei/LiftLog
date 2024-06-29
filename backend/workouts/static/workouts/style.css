@@ -1,0 +1,8 @@
+.horizontal-container {
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-container .padded {
+    margin: 2px;
+}

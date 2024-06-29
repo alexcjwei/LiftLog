@@ -7,6 +7,7 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
+from django.views.decorators.http import require_POST
 from workouts import models
 from workouts import forms
 
@@ -61,6 +62,7 @@ class WorkoutCreateView(LoginRequiredMixin, generic.CreateView):
 
 
 @login_required
+@require_POST
 def workout_delete(request, pk):
     workout = get_object_or_404(models.Workout, pk=pk)
     if workout.user != request.user:
@@ -70,6 +72,7 @@ def workout_delete(request, pk):
 
 
 @login_required
+@require_POST
 def workout_copy(request, pk):
     workout = get_object_or_404(models.Workout, pk=pk)
     if workout.user != request.user:
@@ -121,6 +124,7 @@ class WorkoutExerciseDetailView(LoginRequiredMixin, generic.DetailView):
 
 
 @login_required
+@require_POST
 def workout_exercise_add(request, workout_id):
     workout = get_object_or_404(models.Workout, pk=workout_id)
     if workout.user != request.user:
@@ -137,6 +141,7 @@ def workout_exercise_add(request, workout_id):
 
 
 @login_required
+@require_POST
 def workout_exercise_delete(request, workout_exercise_id):
     workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
     if workout_exercise.user != request.user:
@@ -146,6 +151,7 @@ def workout_exercise_delete(request, workout_exercise_id):
 
 
 @login_required
+@require_POST
 def workout_exercise_shift_order(request, workout_exercise_id, direction):
     workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
     if workout_exercise.user != request.user:
@@ -158,6 +164,7 @@ def workout_exercise_shift_order(request, workout_exercise_id, direction):
 
 
 @login_required
+@require_POST
 def set_add(request, workout_exercise_id):
     workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
     if workout_exercise.user != request.user:
@@ -174,6 +181,7 @@ def set_add(request, workout_exercise_id):
 
 
 @login_required
+@require_POST
 def set_delete(request, pk):
     set_ = get_object_or_404(models.Set, pk=pk)
     if set_.user != request.user:
@@ -185,6 +193,7 @@ def set_delete(request, pk):
 
 
 @login_required
+@require_POST
 def set_copy(request, pk):
     set_ = get_object_or_404(models.Set, pk=pk)
     if set_.user != request.user:

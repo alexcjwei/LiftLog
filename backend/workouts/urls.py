@@ -14,7 +14,7 @@ workout_patterns = [
 ]
 workout_exercise_patterns = [
     path(
-        "<int:workout_id>/add-exercise/",
+        "<int:workout_id>/exercises/add/",
         views.workout_exercise_add,
         name="workout_exercise_add",
     ),

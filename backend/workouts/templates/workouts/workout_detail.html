@@ -6,18 +6,31 @@
     {% if workout.exercises.count > 0 %}
         {% for workout_exercise in workout.exercises.all %}
             <li>
-                <span><a href="{% url 'workouts:workout_exercise_shift_order' workout_exercise_id=workout_exercise.id direction='up'%}">&uarr;</a></span>
-                <span><a href="{% url 'workouts:workout_exercise_shift_order' workout_exercise_id=workout_exercise.id direction='down'%}">&darr;</a></span>
-                {{ workout_exercise }}
-                <a href="{% url 'workouts:workout_exercise_detail' pk=workout_exercise.id %}">Edit</a>
-                <a href="{% url 'workouts:workout_exercise_delete' workout_exercise_id=workout_exercise.id %}">Delete</a>
+                <div class="horizontal-container">
+                    <form method="post" action={% url 'workouts:workout_exercise_shift_order' workout_exercise_id=workout_exercise.id direction='up'%}>
+                        {% csrf_token %}
+                        <button type="submit">&uarr;</button>
+                    </form>
+                    <form method="post" action={% url 'workouts:workout_exercise_shift_order' workout_exercise_id=workout_exercise.id direction='down'%}>
+                        {% csrf_token %}
+                        <button type="submit">&darr;</button>
+                    </form>
+                    <div class="padded">
+                        {{ workout_exercise }}
+                    </div>
+                    <a href={% url 'workouts:workout_exercise_detail' pk=workout_exercise.id %} class="padded">Edit</a>
+                    <form method="post" action={% url 'workouts:workout_exercise_delete' workout_exercise_id=workout_exercise.id %} class="padded">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
             </li>
         {% endfor %}
     {% else %}
         <li>No exercises for this workout</li>
     {% endif %}
 </ul>
-<form method="post" action="{% url 'workouts:workout_exercise_add' workout_id=workout.id %}">
+<form method="post" action={% url 'workouts:workout_exercise_add' workout_id=workout.id %}>
     {% csrf_token %}
     {{ add_exercise_form.as_p }}
     <button type="submit">Add Exercise</button>

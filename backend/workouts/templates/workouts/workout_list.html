@@ -8,8 +8,14 @@
     {% for workout in workout_list %}
         <li>
             <a href={% url 'workouts:detail' workout.id %}>{{ workout }}</a>
-            <a href={% url 'workouts:copy' workout.id %}>Copy</a>
-            <a href={% url 'workouts:delete' workout.id %}>Delete</a>
+            <form action={% url 'workouts:copy' workout.id %} method="post">
+                {% csrf_token %}
+                <button type="submit">Copy</button>
+            </form>
+            <form action={% url 'workouts:delete' workout.id %} method="post">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
         </li>
     {% endfor %}
 {% else %}
