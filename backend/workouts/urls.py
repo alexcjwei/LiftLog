@@ -28,6 +28,11 @@ workout_exercise_patterns = [
         views.WorkoutExerciseDetailView.as_view(),
         name="workout_exercise_detail",
     ),
+    path(
+        "exercises/<int:pk>/order/<str:direction>",
+        views.workout_exercise_shift_order,
+        name="workout_exercise_shift_order",
+    ),
 ]
 set_patterns = [
     path("exercises/<int:workout_exercise_id>/add-set/", views.set_add, name="set_add"),

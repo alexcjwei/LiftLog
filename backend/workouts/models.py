@@ -33,11 +33,13 @@ class Workout(models.Model):
 class WorkoutExercise(models.Model):
     class Meta:
         db_table = "workout_exercises"
+        ordering = ["order"]
 
     workout = models.ForeignKey(
         Workout, on_delete=models.CASCADE, related_name="exercises"
     )
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+    order = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return f"{self.exercise.name} x {self.sets.count()} sets"
@@ -48,6 +50,27 @@ class WorkoutExercise(models.Model):
 
     def can_user_manage(self, user):
         return self.user == user
+
+    def save(self, *args, **kwargs):
+        # A. Wei - Newly saving exercises do not have a pk. Use this to add new exercises to the end of the list.
+        if not self.pk:
+            self.order = self.workout.exercises.count() + 1
+        super().save(*args, **kwargs)
+
+    def swap_order(self, other):
+        self.order, other.order = other.order, self.order
+        self.save()
+        other.save()
+
+    def shift_order_up(self):
+        previous = self.workout.exercises.filter(order__lt=self.order).last()
+        if previous:
+            self.swap_order(previous)
+
+    def shift_order_down(self):
+        next_ = self.workout.exercises.filter(order__gt=self.order).first()
+        if next_:
+            self.swap_order(next_)
 
 
 class Set(models.Model):

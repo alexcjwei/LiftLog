@@ -6,6 +6,8 @@
     {% if workout.exercises.count > 0 %}
         {% for workout_exercise in workout.exercises.all %}
             <li>
+                <span>&uarr;</span>
+                <span>&darr;</span>
                 {{ workout_exercise }}
                 <a href="{% url 'workouts:workout_exercise_detail' pk=workout_exercise.id %}">Edit</a>
                 <a href="{% url 'workouts:workout_exercise_delete' workout_exercise_id=workout_exercise.id %}">Delete</a>

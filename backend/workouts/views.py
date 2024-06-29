@@ -146,6 +146,18 @@ def workout_exercise_delete(request, workout_exercise_id):
 
 
 @login_required
+def workout_exercise_shift_order(request, workout_exercise_id, direction):
+    workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
+    if workout_exercise.user != request.user:
+        return HttpResponseForbidden("You are not allowed to shift this exercise.")
+    if direction == "up":
+        workout_exercise.shift_order_up()
+    elif direction == "down":
+        workout_exercise.shift_order_down()
+    return redirect("workouts:detail", pk=workout_exercise.workout_id)
+
+
+@login_required
 def set_add(request, workout_exercise_id):
     workout_exercise = get_object_or_404(models.WorkoutExercise, pk=workout_exercise_id)
     if workout_exercise.user != request.user:
