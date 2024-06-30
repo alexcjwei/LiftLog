@@ -1,10 +1,6 @@
 {% extends 'workouts/workout_base.html' %}
 
-{% block content %}
-{{ block.super }}
-<div>
-    <a href={% url 'workouts:update' pk=workout.id %}>Edit workout name</a>
-</div>
+{% block content %}{{ block.super }}
 <ul>
     {% if workout.exercises.count > 0 %}
         {% for workout_exercise in workout.exercises.all %}

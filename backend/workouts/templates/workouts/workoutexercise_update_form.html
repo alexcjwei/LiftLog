@@ -1,7 +1,9 @@
 {% extends 'workouts/workoutexercise_base.html' %}
 
-{% block content %}
-    {{ block.super }}
+{% block content %}{{ block.super }}
+    <div>
+        <a href={% url 'workouts:workout_exercise_detail' workoutexercise.id %}>&lt Back to sets</a>
+    </div>
     <form method="post">{% csrf_token %}
         <h3>Change Exercise</h3>
         {{ form.as_p }}

@@ -120,8 +120,30 @@ class WorkoutExerciseDetailView(LoginRequiredMixin, generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["workout"] = context["workoutexercise"].workout
-        context["add_set_form"] = forms.SetForm()
+        prev_weight = self._get_prev_weight(context["workoutexercise"].exercise)
+        context["add_set_form"] = forms.SetForm(initial={"weight": prev_weight})
         return context
+
+    def _get_prev_weight(self, exercise):
+        """
+        Get the previous weight used for this exercise
+        by looking at the most recent set for this exercise
+        and returning the weight used.
+        """
+        set_ = (
+            models.Set.objects.filter(
+                workout_exercise__exercise=exercise,
+                workout_exercise__workout__profile=self.request.user.profile,
+            )
+            .order_by(
+                "-workout_exercise__workout__date",
+                "-id",  # A. Wei - This assumes that the most recent set is the one with the highest id.
+            )
+            .first()
+        )
+        if set_:
+            return set_.weight
+        return None
 
 
 class WorkoutExerciseUpdateView(LoginRequiredMixin, generic.UpdateView):

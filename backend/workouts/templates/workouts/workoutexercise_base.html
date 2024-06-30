@@ -6,5 +6,4 @@
         <a href={% url 'workouts:detail' workout.id %}>&lt All exercises</a>
     {% endwith %}
     <h2>{{ workoutexercise.exercise }}</h2>
-    <a href={% url 'workouts:workout_exercise_update' pk=workoutexercise.id %}>Change Exercise</a>
 {% endblock %}

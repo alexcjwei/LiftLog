@@ -4,6 +4,9 @@
     {% with workoutexercise=set.workout_exercise %}
         {{ block.super }}
     {% endwith%}
+    <div>
+        <a href={% url 'workouts:workout_exercise_detail' set.workout_exercise.id %}>&lt Back to sets</a>
+    </div>
     <form method="post">{% csrf_token %}
         <h3>Edit Set</h3>
         {{ form.as_p }}
