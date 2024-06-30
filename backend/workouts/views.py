@@ -123,6 +123,23 @@ class WorkoutExerciseDetailView(LoginRequiredMixin, generic.DetailView):
         return context
 
 
+class WorkoutExerciseUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = models.WorkoutExercise
+    fields = ["exercise"]
+    template_name_suffix = "_update_form"
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(workout__profile=self.request.user.profile)
+        return qs
+
+    def get_success_url(self):
+        return reverse_lazy(
+            "workouts:workout_exercise_detail",
+            kwargs={"pk": self.object.id},
+        )
+
+
 @login_required
 @require_POST
 def workout_exercise_add(request, workout_id):

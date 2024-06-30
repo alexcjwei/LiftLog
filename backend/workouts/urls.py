@@ -29,6 +29,11 @@ workout_exercise_patterns = [
         name="workout_exercise_detail",
     ),
     path(
+        "exercises/<int:pk>/update",
+        views.WorkoutExerciseUpdateView.as_view(),
+        name="workout_exercise_update",
+    ),
+    path(
         "exercises/<int:workout_exercise_id>/order/<str:direction>",
         views.workout_exercise_shift_order,
         name="workout_exercise_shift_order",

@@ -1,0 +1,10 @@
+{% extends 'workouts/workoutexercise_base.html' %}
+
+{% block content %}
+    {{ block.super }}
+    <form method="post">{% csrf_token %}
+        <h3>Change Exercise</h3>
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+{% endblock %}
