@@ -1,21 +1,24 @@
 {% extends 'workouts/base.html' %}
 
 {% block content %}
+{{ block.super }}
 <h1>Workouts</h1>
 <a href={% url 'workouts:create' %}>Create a new workout</a>
 <ul>
 {% if workout_list %}
     {% for workout in workout_list %}
         <li>
-            <a href={% url 'workouts:detail' workout.id %}>{{ workout }}</a>
-            <form action={% url 'workouts:copy' workout.id %} method="post">
-                {% csrf_token %}
-                <button type="submit">Copy</button>
-            </form>
-            <form action={% url 'workouts:delete' workout.id %} method="post">
-                {% csrf_token %}
-                <button type="submit">Delete</button>
-            </form>
+            <div class='horizontal-container'>
+                <a href={% url 'workouts:detail' workout.id %}>{{ workout }}</a>
+                <form action={% url 'workouts:copy' workout.id %} method="post"  class="padded">
+                    {% csrf_token %}
+                    <button type="submit">Copy</button>
+                </form>
+                <form action={% url 'workouts:delete' workout.id %} method="post" class="padded">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
         </li>
     {% endfor %}
 {% else %}
