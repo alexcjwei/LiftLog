@@ -3,20 +3,20 @@
 {% block content %}
 {{ block.super }}
 <h1>Workouts</h1>
-<a href={% url 'workouts:create' %}>Create a new workout</a>
+<a href={% url 'workouts:create' %} class="btn btn-success">Create new workout</a>
 <ul>
 {% if workout_list %}
     {% for workout in workout_list %}
         <li>
             <div class='horizontal-container'>
-                <a href={% url 'workouts:detail' workout.id %}>{{ workout }}</a>
+                <a href={% url 'workouts:detail' workout.id %}>{{ workout.date }} - {{ workout.name }}</a>
                 <form action={% url 'workouts:copy' workout.id %} method="post"  class="padded">
                     {% csrf_token %}
-                    <button type="submit">Copy</button>
+                    <button type="submit" class="btn btn-secondary">Copy</button>
                 </form>
                 <form action={% url 'workouts:delete' workout.id %} method="post" class="padded">
                     {% csrf_token %}
-                    <button type="submit">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>
         </li>

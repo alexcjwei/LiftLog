@@ -2,6 +2,9 @@
 
 {% block content %}
 {{ block.super }}
+<div>
+    <a href={% url 'workouts:update' pk=workout.id %}>Edit workout name</a>
+</div>
 <ul>
     {% if workout.exercises.count > 0 %}
         {% for workout_exercise in workout.exercises.all %}

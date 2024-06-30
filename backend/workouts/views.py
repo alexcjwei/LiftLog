@@ -52,9 +52,10 @@ class WorkoutUpdateView(LoginRequiredMixin, generic.UpdateView):
 class WorkoutCreateView(LoginRequiredMixin, generic.CreateView):
     model = models.Workout
     form_class = forms.WorkoutForm
-    success_url = reverse_lazy(
-        "workouts:index"
-    )  # A. Wei - Use reverse_lazy so there's no circular import.
+
+    def get_success_url(self):
+        # A. Wei - Use reverse_lazy so there's no circular import.
+        return reverse_lazy("workouts:detail", kwargs={"pk": self.object.id})
 
     def form_valid(self, form):
         form.instance.profile = self.request.user.profile
