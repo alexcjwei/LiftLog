@@ -3,6 +3,7 @@
 {% block content %}
     {% with workout=workoutexercise.workout %}
         {{ block.super }}
-    {% endwith%}
+        <a href={% url 'workouts:detail' workout.id %}>&lt Back</a>
+    {% endwith %}
     <h2>{{ workoutexercise.exercise }}</h2>
 {% endblock %}
