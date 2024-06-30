@@ -9,19 +9,20 @@
                 <div class="horizontal-container">
                     <form method="post" action={% url 'workouts:workout_exercise_shift_order' workout_exercise_id=workout_exercise.id direction='up'%}>
                         {% csrf_token %}
-                        <button type="submit">&uarr;</button>
+                        <button type="submit" class="btn px-0">&uarr;</button>
                     </form>
                     <form method="post" action={% url 'workouts:workout_exercise_shift_order' workout_exercise_id=workout_exercise.id direction='down'%}>
                         {% csrf_token %}
-                        <button type="submit">&darr;</button>
+                        <button type="submit" class="btn px-0">&darr;</button>
                     </form>
                     <div class="padded">
+                        <a href={% url 'workouts:workout_exercise_detail' pk=workout_exercise.id %}>
                         {{ workout_exercise }}
+                        </a>
                     </div>
-                    <a href={% url 'workouts:workout_exercise_detail' pk=workout_exercise.id %} class="padded">Edit</a>
                     <form method="post" action={% url 'workouts:workout_exercise_delete' workout_exercise_id=workout_exercise.id %} class="padded">
                         {% csrf_token %}
-                        <button type="submit">Delete</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>
             </li>

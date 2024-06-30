@@ -6,23 +6,25 @@
     {% for set in workoutexercise.sets.all %}
         <li>
             <div class='horizontal-container'>
-                {{ set }}
-                <a href={%url 'workouts:set_update' pk=set.id%} class="padded">Edit</a>
-                <form method="post" action={%url 'workouts:set_delete' set.id%} class="padded">
-                    {% csrf_token %}
-                    <button type="submit">Delete</button>
-                </form>
+                <a href={%url 'workouts:set_update' pk=set.id%}>
+                    {{ set }}
+                </a>
                 <form method="post" action={%url 'workouts:set_copy' set.id %} class="padded">
                     {% csrf_token %}
-                    <button type="submit">Copy</button>
+                    <button type="submit" class="btn btn-secondary">Copy</button>
+                </form>
+                <form method="post" action={%url 'workouts:set_delete' set.id%} class="padded">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>
         </li>
     {% endfor %}
     </ul>
     <form method="post" action="{% url 'workouts:set_add' workout_exercise_id=workoutexercise.id %}">
+        <h3>Add Set</h3>
         {% csrf_token %}
         {{ add_set_form.as_p }}
-        <button type="submit">Add Set</button>
+        <button type="submit" class="btn btn-success">Add</button>
     </form>
 {% endblock %}
