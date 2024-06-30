@@ -6,6 +6,6 @@
 
 <h1>
     {{ workout }}
-    <a href="{% url 'workouts:update' pk=workout.id %}">Edit</a>
+    <a href={% url 'workouts:update' pk=workout.id %}>Edit</a>
 </h1>
 {% endblock %}

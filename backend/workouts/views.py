@@ -191,9 +191,11 @@ def set_add(request, workout_exercise_id):
     if request.method == "POST":
         form = forms.SetForm(request.POST)
         if form.is_valid():
-            set = form.save(commit=False)
-            set.workout_exercise_id = workout_exercise_id
-            set.save()
+            num_sets = form.cleaned_data["sets"]
+            set_ = form.save(commit=False)
+            set_.workout_exercise_id = workout_exercise_id
+            sets = [set_] * num_sets
+            models.Set.objects.bulk_create(sets)
             return redirect("workouts:workout_exercise_detail", pk=workout_exercise_id)
 
 

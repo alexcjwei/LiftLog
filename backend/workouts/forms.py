@@ -27,3 +27,5 @@ class SetForm(forms.ModelForm):
     class Meta:
         model = models.Set
         fields = ["weight", "weight_unit", "repetitions", "seconds"]
+
+    sets = forms.IntegerField(min_value=1, max_value=100, initial=1)
