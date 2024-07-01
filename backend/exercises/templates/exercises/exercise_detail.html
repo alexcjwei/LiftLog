@@ -2,4 +2,9 @@
 
 {% block content %}
 <h1>{{ exercise.name }}</h1>
+{% if user.is_authenticated %}
+    {% include 'exercises/_exercise_history_chart.html' %}
+{% else %}
+    <div>Sign in to see your exercise history.</div>
+{% endif %}
 {% endblock %}

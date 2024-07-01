@@ -1,6 +1,10 @@
 {% extends 'workouts/workout_base.html' %}
 
-{% block content %}{{ block.super }}
+{% block content %}
+<div>
+    <a href={% url 'workouts:index'%}>Back to workouts list</a>
+</div>
+{{ block.super }}
 <ul>
     {% if workout.exercises.count > 0 %}
         {% for workout_exercise in workout.exercises.all %}

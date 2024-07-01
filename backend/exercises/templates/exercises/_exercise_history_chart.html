@@ -1,0 +1,21 @@
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div style="min-width: 310; height: 400px; margin: 0 auto" class="border"><canvas id="exercise-history"></canvas></div>
+
+<!-- Chart script -->
+<script>
+    const chart = new Chart(
+        document.getElementById('exercise-history'),
+        {
+            type: 'line',
+            data: {
+                labels: {{ exercise_history.labels|safe }},
+                datasets: [{
+                    label: 'Exercise History',
+                    data: {{ exercise_history.data|safe }},
+                }]
+            },
+        });
+    console.log(chart)
+</script>

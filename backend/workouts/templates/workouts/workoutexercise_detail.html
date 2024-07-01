@@ -1,6 +1,8 @@
 {% extends 'workouts/workoutexercise_base.html' %}
 
-{% block content %}{{ block.super }}
+{% block content %}
+    <a href={% url 'workouts:detail' workout.id %}>Back to all exercises</a>
+    {{ block.super }}
     <div>
         <a href={% url 'workouts:workout_exercise_update' pk=workoutexercise.id %}>Change Exercise</a>
     </div>
