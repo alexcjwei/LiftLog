@@ -1,0 +1,20 @@
+{% extends 'accounts/base.html' %}
+
+
+{% block content %}
+<h1>Athletes</h1>
+<form method="get">
+    <input type="text" name="username" placeholder="Search">
+    <button type="submit" class="btn btn-outline-primary">Search</button>
+</form>
+<ul>
+{% if profile_list %}
+    {% for profile in profile_list %}
+        <li>
+            {{ profile.user.username }}
+            <button class="btn btn-outline-primary">Follow</button>
+        </li>
+    {% endfor %}
+{% endif %}
+</ul>
+{% endblock %}

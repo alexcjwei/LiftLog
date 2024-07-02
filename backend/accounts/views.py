@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
@@ -22,3 +23,15 @@ class UserCreateView(generic.CreateView):
         response = super().form_valid(form)
         profile = models.Profile.objects.create(user=self.object)
         return response
+
+
+class ProfileListView(LoginRequiredMixin, generic.ListView):
+    model = models.Profile
+    template_name = "accounts/index.html"
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        if "username" in self.request.GET:
+            qs = qs.filter(user__username__icontains=self.request.GET["username"])
+
+        return qs

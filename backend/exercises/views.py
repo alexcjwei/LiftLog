@@ -34,7 +34,8 @@ class ExerciseDetailView(generic.DetailView):
         ).order_by("workout__date")
 
         for exercise in exercises:
-            exercise_history["labels"].append(str(exercise.workout.date))
-            exercise_history["data"].append(float(exercise.average_weight))
+            if exercise.average_weight:
+                exercise_history["labels"].append(float(exercise.average_weight))
+                exercise_history["data"].append(str(exercise.workout.date))
 
         return exercise_history

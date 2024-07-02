@@ -5,6 +5,7 @@
     <a href={% url 'workouts:index'%}>Back to workouts list</a>
 </div>
 {{ block.super }}
+<a href={% url 'workouts:update' workout.id %}>Rename</a>
 <ul>
     {% if workout.exercises.count > 0 %}
         {% for workout_exercise in workout.exercises.all %}
