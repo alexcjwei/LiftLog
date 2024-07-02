@@ -48,6 +48,24 @@ class WorkoutExercise(models.Model):
     def user(self):
         return self.workout.profile.user
 
+    @property
+    def average_weight(self):
+        sets = self.sets.filter(weight__isnull=False)
+        if sets:
+            return sets.aggregate(models.Avg("weight"))["weight__avg"]
+
+    @property
+    def average_repetitions(self):
+        sets = self.sets.filter(repetitions__isnull=False)
+        if sets:
+            return sets.aggregate(models.Avg("repetitions"))["repetitions__avg"]
+
+    @property
+    def average_seconds(self):
+        sets = self.sets.filter(seconds__isnull=False)
+        if sets:
+            return sets.aggregate(models.Avg("seconds"))["seconds__avg"]
+
     def can_user_manage(self, user):
         return self.user == user
 

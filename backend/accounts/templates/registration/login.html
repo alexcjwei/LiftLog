@@ -5,6 +5,12 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <div>
+      <a href="{% url 'accounts:signup' %}">Create an account</a>
+    </div>
+    <div>
+      <a href="{% url 'accounts:password_reset' %}">Forgot password?</a>
+    </div>
     <button type="submit">Login</button>
   </form>
 {% endblock %}

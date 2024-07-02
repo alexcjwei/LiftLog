@@ -5,4 +5,5 @@ app_name = "accounts"
 urlpatterns = [
     path("", include("django.contrib.auth.urls")),
     path("profile/", views.get_profile, name="profile"),
+    path("signup/", views.UserCreateView.as_view(), name="signup"),
 ]
