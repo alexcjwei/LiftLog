@@ -1,9 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
+from django.views.decorators.http import require_POST
 from accounts import models, forms
 
 
@@ -35,3 +37,27 @@ class ProfileListView(LoginRequiredMixin, generic.ListView):
             qs = qs.filter(user__username__icontains=self.request.GET["username"])
 
         return qs
+
+
+@login_required
+@require_POST
+def follow(request, pk):
+    profile = get_object_or_404(models.Profile, pk=pk)
+    current_profile = get_object_or_404(models.Profile, user=request.user)
+    current_profile.follows.add(profile)
+
+    # Redirect to the next url. Default to the index view.
+    next_url = request.POST.get("next", reverse_lazy("accounts:index"))
+    return HttpResponseRedirect(next_url)
+
+
+@login_required
+@require_POST
+def unfollow(request, pk):
+    profile = get_object_or_404(models.Profile, pk=pk)
+    current_profile = get_object_or_404(models.Profile, user=request.user)
+    current_profile.follows.remove(profile)
+
+    # Redirect to the next url. Default to the index view.
+    next_url = request.POST.get("next", reverse_lazy("accounts:index"))
+    return HttpResponseRedirect(next_url)
