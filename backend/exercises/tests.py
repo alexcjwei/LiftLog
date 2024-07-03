@@ -31,3 +31,26 @@ class ExerciseDetailViewTests(TestCase):
         response = self.client.get(f"/exercises/{exercise.pk}/")
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, "TypeError")
+
+    def test_sets_with_weight_in_exercise_history_data(self):
+        # Login
+        self.client.force_login(self.test_user)
+
+        # Setup
+        exercise = Exercise.objects.create(name="Test Exercise")
+        workout = Workout.objects.create(
+            profile=self.test_profile, name="Test Workout", date="2024-01-01"
+        )
+        workout_exercise = WorkoutExercise.objects.create(
+            workout=workout, exercise=exercise
+        )
+        set_ = Set.objects.create(
+            workout_exercise=workout_exercise,
+            weight=100,
+            repetitions=10,
+        )
+
+        # Check response
+        response = self.client.get(f"/exercises/{exercise.pk}/")
+        self.assertEqual(response.status_code, 200)
+        self.assertIsInstance(response.context["exercise_history"]["data"][0], float)
