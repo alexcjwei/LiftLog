@@ -3,6 +3,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import { useAuth } from '@/context/AuthContext';
 import { StyleSheet, TextInput, Button } from 'react-native';
+import { ThemedTextInput } from '@/components/ThemedTextInput';
 
 export default function Register() {
   const { register } = useAuth();
@@ -32,21 +33,21 @@ export default function Register() {
   return (
     <ThemedView>
       <ThemedText style={styles.error}>{error}</ThemedText>
-      <TextInput
+      <ThemedTextInput
         style={styles.input}
         placeholder='Email'
         autoCapitalize='none'
         value={email}
         onChangeText={setEmail}
       />
-      <TextInput
+      <ThemedTextInput
         style={styles.input}
         placeholder='Password'
         secureTextEntry
         value={password}
         onChangeText={setPassword}
       />
-      <TextInput
+      <ThemedTextInput
         style={styles.input}
         placeholder='Confirm Password'
         secureTextEntry

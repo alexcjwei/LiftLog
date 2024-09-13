@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedTextInput } from '@/components/ThemedTextInput';
 import { TextInput, Button, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
-import { ThemedText } from '@/components/ThemedText';
 import { Redirect } from 'expo-router';
 
 const LogIn = () => {
@@ -29,22 +30,24 @@ const LogIn = () => {
   return (
     <ThemedView style={styles.container}>
       <ThemedText style={styles.error}>{error}</ThemedText>
-      <TextInput
-        style={styles.input}
+      <ThemedTextInput
         placeholder='Email'
         autoCapitalize='none'
         value={email}
         onChangeText={setEmail}
       />
-      <TextInput
-        style={styles.input}
+      <ThemedTextInput
         placeholder='Password'
         secureTextEntry
         value={password}
         onChangeText={setPassword}
       />
-      <Link href='./forgot-password'>Forgot Password</Link>
-      <Link href='./register'>Create an account</Link>
+      <Link href='./forgot-password'>
+        <ThemedText>Forgot Password</ThemedText>
+      </Link>
+      <Link href='./register'>
+        <ThemedText>Create an account</ThemedText>
+      </Link>
       <Button title='Log In' onPress={handleLogIn} />
     </ThemedView>
   );

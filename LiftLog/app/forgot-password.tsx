@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ThemedView } from '@/components/ThemedView';
 import { TextInput, Button, Alert, StyleSheet } from 'react-native';
+import { ThemedTextInput } from '@/components/ThemedTextInput';
 
 const ForgotPasswordForm: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const ForgotPasswordForm: React.FC = () => {
 
   return (
     <ThemedView style={styles.container}>
-      <TextInput
+      <ThemedTextInput
         style={styles.input}
         placeholder='Email'
         value={email}
