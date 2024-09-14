@@ -21,4 +21,3 @@ const app = initializeApp(firebaseConfig);
 export const auth = initializeAuth(app, {
   persistence: getReactNativePersistence(AsyncStorage),
 });
-connectAuthEmulator(auth, 'http://localhost:9099');

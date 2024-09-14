@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import { useAuth } from '@/context/AuthContext';
-import { StyleSheet, TextInput, Button } from 'react-native';
+import { StyleSheet, Button } from 'react-native';
 import { ThemedTextInput } from '@/components/ThemedTextInput';
+import { useRouter } from 'expo-router';
 
 export default function Register() {
   const { register } = useAuth();
@@ -11,6 +12,7 @@ export default function Register() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleRegister = async () => {
     const passwordError = validatePassword(password);
@@ -24,6 +26,7 @@ export default function Register() {
 
     try {
       await register(email, password);
+      router.push('/log-in');
     } catch (error: any) {
       console.error(error);
       setError(error.message);
