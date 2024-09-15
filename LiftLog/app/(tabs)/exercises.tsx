@@ -1,15 +1,22 @@
 import { ThemedText } from '@/components/ThemedText';
 import SimpleView from '@/components/BaseView';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { ThemedTextInput } from '@/components/ThemedTextInput';
-import { Exercises } from '@/constants/Exercises';
+import exercisesJson from '@/constants/exercises.json';
+import { ScrollView } from 'react-native';
 
 // TODO add search bar and filter exercises by search
 // TODO add filter popup modal to filter for type of exercise
 // TODO add favorite star next to each exercise
 export default function ExercisesScreen() {
-  const [exercises, setExercises] = useState(Exercises);
+  const [exercises, setExercises] = useState(exercisesJson.exercises);
   const [search, setSearch] = useState('');
+
+  const filteredExercises = useMemo(() => {
+    return exercises.filter((exercise) =>
+      exercise.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [exercises, search]);
 
   return (
     <SimpleView>
@@ -19,13 +26,11 @@ export default function ExercisesScreen() {
         value={search}
         onChangeText={setSearch}
       />
-      {exercises
-        .filter((exercise) =>
-          exercise.name.toLowerCase().includes(search.toLowerCase())
-        )
-        .map((exercise) => (
+      <ScrollView>
+        {filteredExercises.map((exercise) => (
           <ThemedText key={exercise.id}>{exercise.name}</ThemedText>
         ))}
+      </ScrollView>
     </SimpleView>
   );
 }
