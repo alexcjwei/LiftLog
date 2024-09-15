@@ -35,9 +35,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name='log'
+        name='logs'
         options={{
-          title: 'Log',
+          title: 'Logs',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
               name={focused ? 'edit-note' : 'edit-note'}
@@ -59,9 +59,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name='profile'
+        name='me'
         options={{
-          title: 'Profile',
+          title: 'Me',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
               name={focused ? 'person' : 'person-outline'}
