@@ -1,0 +1,277 @@
+{
+  "exercises": [
+    {
+      "id": "squat",
+      "name": "Squat",
+      "category": "leg",
+      "parentId": null
+    },
+    {
+      "id": "squat-back",
+      "name": "Back Squat",
+      "category": "leg",
+      "parentId": "squat"
+    },
+    {
+      "id": "squat-front",
+      "name": "Front Squat",
+      "category": "leg",
+      "parentId": "squat"
+    },
+    {
+      "id": "squat-split",
+      "name": "Split Squat",
+      "category": "leg",
+      "parentId": "squat"
+    },
+    {
+      "id": "squat-bulgarian-split",
+      "name": "Bulgarian Split Squat",
+      "category": "leg",
+      "parentId": "squat-split"
+    },
+    {
+      "id": "squat-pistol",
+      "name": "Pistol Squat",
+      "category": "leg",
+      "parentId": "squat"
+    },
+    {
+      "id": "squat-goblet",
+      "name": "Goblet Squat",
+      "category": "leg",
+      "parentId": "squat"
+    },
+    { "id": "lunge", "name": "Lunge", "category": "leg", "parentId": null },
+    {
+      "id": "lunge-forward",
+      "name": "Forward Lunge",
+      "category": "leg",
+      "parentId": "lunge"
+    },
+    {
+      "id": "lunge-reverse",
+      "name": "Reverse Lunge",
+      "category": "leg",
+      "parentId": "lunge"
+    },
+    {
+      "id": "lunge-walking",
+      "name": "Walking Lunge",
+      "category": "leg",
+      "parentId": "lunge"
+    },
+    {
+      "id": "lunge-side",
+      "name": "Side Lunge",
+      "category": "leg",
+      "parentId": "lunge"
+    },
+    {
+      "id": "step-up",
+      "name": "Step Up",
+      "category": "leg",
+      "parentId": "lunge"
+    },
+    {
+      "id": "deadlift",
+      "name": "Deadlift",
+      "category": "leg",
+      "parentId": null
+    },
+    {
+      "id": "deadlift-romanian",
+      "name": "Romanian Deadlift",
+      "category": "leg",
+      "parentId": "deadlift"
+    },
+    {
+      "id": "deadlift-single-leg",
+      "name": "Single Leg Deadlift",
+      "category": "leg",
+      "parentId": "deadlift"
+    },
+    {
+      "id": "deadlift-single-leg-romanian",
+      "name": "Single Leg Romanian Deadlift",
+      "category": "leg",
+      "parentId": "deadlift-single-leg"
+    },
+    {
+      "id": "calf-raise",
+      "name": "Calf Raise",
+      "category": "leg",
+      "parentId": null
+    },
+    {
+      "id": "calf-raise-single-leg",
+      "name": "Single Leg Calf Raise",
+      "category": "leg",
+      "parentId": "calf-raise"
+    },
+    {
+      "id": "calf-raise-single-leg-bent",
+      "name": "Bent-Knee Single Leg Calf Raise",
+      "category": "leg",
+      "parentId": "calf-raise-single-leg"
+    },
+    {
+      "id": "calf-raise-seated",
+      "name": "Seated Calf Raise",
+      "category": "leg",
+      "parentId": "calf-raise"
+    },
+    {
+      "id": "bench-press",
+      "name": "Bench Press",
+      "category": "chest",
+      "parentId": null
+    },
+    {
+      "id": "bench-press-incline",
+      "name": "Incline Bench Press",
+      "category": "chest",
+      "parentId": "bench-press"
+    },
+    {
+      "id": "bench-press-decline",
+      "name": "Decline Bench Press",
+      "category": "chest",
+      "parentId": "bench-press"
+    },
+    {
+      "id": "push-up",
+      "name": "Push Up",
+      "category": "chest",
+      "parentId": null
+    },
+    {
+      "id": "push-up-incline",
+      "name": "Incline Push Up",
+      "category": "chest",
+      "parentId": "push-up"
+    },
+    {
+      "id": "push-up-decline",
+      "name": "Decline Push Up",
+      "category": "chest",
+      "parentId": "push-up"
+    },
+    {
+      "id": "push-up-wide",
+      "name": "Wide Push Up",
+      "category": "chest",
+      "parentId": "push-up"
+    },
+    {
+      "id": "push-up-diamond",
+      "name": "Diamond Push Up",
+      "category": "chest",
+      "parentId": "push-up"
+    },
+    {
+      "id": "pull-up",
+      "name": "Pull Up",
+      "category": "back",
+      "parentId": null
+    },
+    {
+      "id": "chin-up",
+      "name": "Pull Up",
+      "category": "back",
+      "parentId": "pull-up"
+    },
+    {
+      "id": "pull-up-wide",
+      "name": "Wide Grip Pull Up",
+      "category": "back",
+      "parentId": "pull-up"
+    },
+    {
+      "id": "pull-up-close",
+      "name": "Close Grip Pull Up",
+      "category": "back",
+      "parentId": "pull-up"
+    },
+    { "id": "row", "name": "Row", "category": "back", "parentId": null },
+    {
+      "id": "row-bent-over",
+      "name": "Bent Over Row",
+      "category": "back",
+      "parentId": "row"
+    },
+    {
+      "id": "row-inverse",
+      "name": "Inverse Row",
+      "category": "back",
+      "parentId": "row"
+    },
+    {
+      "id": "row-single-arm",
+      "name": "Single Arm Row",
+      "category": "back",
+      "parentId": "row"
+    },
+    {
+      "id": "shoulder-press",
+      "name": "Shoulder Press",
+      "category": "shoulder",
+      "parentId": null
+    },
+    {
+      "id": "shoulder-press-standing-overhead",
+      "name": "Standing Overhead Press",
+      "category": "shoulder",
+      "parentId": "shoulder-press"
+    },
+    {
+      "id": "lateral-raise",
+      "name": "Lateral Raise",
+      "category": "shoulder",
+      "parentId": null
+    },
+    { "id": "plank", "name": "Plank", "category": "core", "parentId": null },
+    {
+      "id": "plank-side",
+      "name": "Side Plank",
+      "category": "core",
+      "parentId": "plank"
+    },
+    {
+      "id": "plank-t",
+      "name": "T Plank",
+      "category": "core",
+      "parentId": "plank"
+    },
+    {
+      "id": "plank-star",
+      "name": "Star Plank",
+      "category": "core",
+      "parentId": "plank"
+    },
+    {
+      "id": "dead-bug",
+      "name": "Dead Bug",
+      "category": "core",
+      "parentId": null
+    },
+    {
+      "id": "bird-dog",
+      "name": "Bird Dog",
+      "category": "core",
+      "parentId": null
+    },
+    {
+      "id": "palloff-press",
+      "name": "Palloff Press",
+      "category": "core",
+      "parentId": null
+    },
+    {
+      "id": "palloff-hold",
+      "name": "Palloff Hold",
+      "category": "core",
+      "parentId": "palloff-press"
+    }
+  ]
+}

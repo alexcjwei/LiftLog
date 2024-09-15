@@ -35,12 +35,36 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name='log'
+        options={{
+          title: 'Log',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? 'edit-note' : 'edit-note'}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name='exercises'
         options={{
           title: 'Exercises',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
               name={focused ? 'fitness-center' : 'fitness-center'}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='profile'
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? 'person' : 'person-outline'}
               color={color}
             />
           ),
