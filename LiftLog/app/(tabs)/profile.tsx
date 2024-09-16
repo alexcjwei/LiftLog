@@ -8,7 +8,7 @@ export default function ProfileScreen() {
   const [name, setName] = useState('Alex Wei');
   const [workoutsTracked, setWorkoutsTracked] = useState(300);
   const [consecutive, setConsecutive] = useState(10);
-  const [consecutiveUnits, setConsecutiveUnites] = useState('weeks');
+  const [consecutiveUnits, setConsecutiveUnits] = useState('weeks');
 
   return (
     <SimpleView>
