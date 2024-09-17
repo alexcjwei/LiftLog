@@ -9,6 +9,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  signOut,
   User,
 } from 'firebase/auth';
 import { auth } from '@/firebase/firebaseConfig';
@@ -43,6 +44,11 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     setUser(userCredential.user);
   };
 
+  const logOut = async () => {
+    await signOut(auth);
+    setUser(null);
+  };
+
   const register = async (email: string, password: string) => {
     console.log(email);
     const userCredential = await createUserWithEmailAndPassword(
@@ -73,9 +79,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
         user,
         logIn: logIn,
         register: register,
-        logOut: () => {
-          setUser(null);
-        },
+        logOut: logOut,
       }}
     >
       {children}

@@ -3,6 +3,8 @@ import { ThemedView } from '@/components/ThemedView';
 import SimpleView from '@/components/BaseView';
 import { useState } from 'react';
 import { BasicStatRow } from '@/components/profile/BasicStatRow';
+import { StyleSheet, View } from 'react-native';
+import ThemedSettingsButton from '@/components/profile/ThemedSettingsButton';
 
 export default function ProfileScreen() {
   const [name, setName] = useState('Alex Wei');
@@ -12,7 +14,10 @@ export default function ProfileScreen() {
 
   return (
     <SimpleView>
-      <ThemedText type='title'>{name}</ThemedText>
+      <ThemedSettingsButton />
+      <View style={styles.title}>
+        <ThemedText type='title'>{name}</ThemedText>
+      </View>
       <ThemedText type='subtitle'>Stats</ThemedText>
       <ThemedView>
         <BasicStatRow
@@ -27,3 +32,9 @@ export default function ProfileScreen() {
     </SimpleView>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    alignItems: 'center',
+  },
+});
