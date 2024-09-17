@@ -11,7 +11,7 @@ import {
   createUserWithEmailAndPassword,
   User,
 } from 'firebase/auth';
-import { auth } from '@/firebaseConfig';
+import { auth } from '@/firebase/firebaseConfig';
 
 interface AuthContextType {
   initializing: boolean;
