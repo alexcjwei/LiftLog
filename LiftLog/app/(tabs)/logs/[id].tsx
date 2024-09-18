@@ -7,6 +7,14 @@ export default function Page() {
   return (
     <SimpleView>
       <ThemedText type='title'>Workout {id}</ThemedText>
+      {/* TODO title input */}
+      {/* TODO date time input */}
+      {/* TODO exercise list */}
+      {/*   TODO exercise card */}
+      {/*     TODO attatch note button */}
+      {/*     TODO set row (weight, reps, time) */}
+      {/*     TODO add set button */}
+      {/* TODO add exercise button */}
     </SimpleView>
   );
 }
